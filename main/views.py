@@ -42,7 +42,7 @@ class UrlExpanderView(View):
             response = {
                     "original_url": url_to_shorten,
                     "shortened": url_is_already_shortened,
-                    "go_to_shortened": url_is_already_shortened,
+                    "go_to_shortened": "http://"+request.META['HTTP_HOST']+"/shorten_url/"+url_is_already_shortened,
                     "message": "already shortened",
                 }
 
@@ -91,7 +91,7 @@ class UrlShortenerView(View):
             response = {
                 "original_url": url_to_shorten,
                 "shortened": url_is_already_shortened,
-                "go_to_shortened": "http://"+request.META['HTTP_HOST']+"/"+url_is_already_shortened,
+                "go_to_shortened": "http://"+request.META['HTTP_HOST']+"/shorten_url/"+url_is_already_shortened,
                 "message": "already shortened",
             }
             return JsonResponse(response)
@@ -109,7 +109,7 @@ class UrlShortenerView(View):
             response = {
                 "original_url": url_to_shorten,
                 "message": self.responses[validurl_response],
-                "go_to_shortened": "http://" + request.META['HTTP_HOST'] + "/" + shortened_url,
+                "go_to_shortened": "http://" + request.META['HTTP_HOST'] + "/shorten_url/" + shortened_url,
                 "shortened_url": shortened_url,
                 "status": "success shortening url",
             }
