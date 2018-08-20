@@ -15,3 +15,6 @@ How to use:
 
 Example POST with curl:
     ```curl -H "Content-Type: application/json" --data '{"url":"http://www.google.com"}' http://shortenurl.uk.to/shorten_url/```
+
+Example of shortened Url:
+    ```http://shortenurl.uk.to/shorten_url/xtGIIL```
