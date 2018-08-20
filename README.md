@@ -14,4 +14,4 @@ How to use:
         "shortener_post": "shorten_url/<url>: via POST: return the shortened url if valid or error message otherwise",
 
 Example POST with curl:
-    curl -H "Content-Type: application/json" --data '{"url":"http://www.google.com"}' http://shortenurl.uk.to/shorten_url/
+    ```curl -H "Content-Type: application/json" --data '{"url":"http://www.google.com"}' http://shortenurl.uk.to/shorten_url/```
